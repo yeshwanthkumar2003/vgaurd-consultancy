@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            a:hover{
+                text-decoration: none;
+            }
+            * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	-webkit-tap-highlight-color: transparent;
+}
+body {
+	background-color: #c7d1de;
+}
+.start-screen,
+.score-container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+#start-button,
+#restart {
+	font-size: 1.3em;
+	padding: 0.5em 1.8em;
+	border-radius: 0.2em;
+}
+#restart {
+	margin-top: 0.9em;
+}
+#wrapper {
+	position: absolute;
+	transform: translateX(-50%);
+	top: 20px;
+	left: 50%;
+	width: 90%;
+	max-width: 37.5em;
+}
+#display-container {
+	position: relative;
+	background-color: #ffffff;
+	padding: 3.1em 1.8em;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 0.6em;
+	box-shadow: 0 20px 45px rgba(0, 24, 56, 0.15);
+}
+a {
+	display: block;
+	background-color: #ffffff;
+	position: relative;
+	margin-top: 1em;
+	text-align: center;
+	text-decoration: none;
+	color: #216ddf;
+	font-size: 1.4em;
+	font-weight: 600;
+	padding: 1em 0;
+	border-radius: 0.4em;
+	box-shadow: 0 20px 45px rgba(0, 24, 56, 0.15);
+}
+.header {
+	margin-bottom: 1.8em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.6em;
+	border-bottom: 0.1em solid #c0bfd2;
+}
+.timer-div {
+	background-color: #e1f5fe;
+	width: 7.5em;
+	border-radius: 1.8em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.7em 1.8em;
+}
+.question {
+	margin-bottom: 1.25em;
+	font-weight: 500;
+}
+.option-div {
+	font-size: 0.9em;
+	width: 100%;
+	padding: 1em;
+	margin: 0.3em 0;
+	text-align: left;
+	outline: none;
+	background: transparent;
+	border: 1px solid #c0bfd2;
+	border-radius: 0.3em;
+}
+.option-div:disabled {
+	color: #0b012d;
+	cursor: not-allowed;
+}
+.btn-container {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.5em;
+}
+#next-button {
+	font-size: 1em;
+	background-color: #0a69ed;
+	color: #ffffff;
+	padding: 0.7em 1.8em;
+	border-radius: 0.3em;
+}
+.hide {
+	display: none;
+}
+.correct {
+	background-color: #e7f6d5;
+	color: #689f38;
+	border-color: #689f38;
+}
+.inCorrect {
+	background-color: #ffdde0;
+	color: #d32f2f;
+	border-color: #d32f2f;
+}
+#user-score {
+	font-size: 1.5em;
+	color: #ffffff;
+}
+i.fab {
+	color: #ff0000;
+}
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 12px;
+	}
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,600,700,800);
+        .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: clamp(2rem, 2.8vw, 5rem);
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.typewriter {
+	width: 21.5ch;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation: cursor 1s step-start infinite, 
+    text 5s steps(18) alternate infinite;
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    border-color: #212121; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 21.5ch; 
+  }
+}
+        </style>
+    </head>
+
+</section>
+<div class="container">
+  <div class="typewriter">throw your best in quiz</div>
+</div>
+<section>
+<div class="start-screen">
+	<button id="start-button">Start</button>
+</div>
+<div id="wrapper">
+	<div id="display-container">
+		<div class="header">
+			<div class="number-of-count">
+				<span class="number-of-question"></span>
+			</div>
+			<div class="timer-div">
+				<img src="https://svgshare.com/i/iRM.svg" />
+				<span class="time-left"></span>
+			</div>
+		</div>
+		<div id="container">
+			<!-- Question and options are displayed here -->
+		</div>
+		<div class="btn-container">
+			<button id="next-button">Next</button>
+		</div>
+	</div>
+	<a href="session2.html" target="_blank">return to home <br><button type="button" class="btn btn-primary">submit</button>&nbsp;<i class="fab fa-youtube"></i></a>
+</div>
+<div class="score-container hide">
+	<div id="user-score"></div>
+	<button id="restart">Restart</button>
+    <br><button type="button" class="btn btn-primary">submit</button>
+   <br><button onclick="window.location.href='session2.html'"  width ="10rem"type="button" class="btn btn-primary">return to module</a></button>
+
+</div>
+<div class="score-container hide">
+	<div id="user-score"></div>
+	
+</div>
+
+<script src="quiz.js"></script>
+</html>
